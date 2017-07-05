@@ -13,6 +13,10 @@
 		4969DB7C1F0CCF71005BEB60 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4969DB7B1F0CCF71005BEB60 /* Assets.xcassets */; };
 		4969DB7F1F0CCF71005BEB60 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4969DB7D1F0CCF71005BEB60 /* LaunchScreen.storyboard */; };
 		4969DB8C1F0CD67F005BEB60 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 4969DB8B1F0CD67F005BEB60 /* GoogleService-Info.plist */; };
+		4969DB8F1F0CE6E7005BEB60 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB8E1F0CE6E7005BEB60 /* Constants.swift */; };
+		4969DB911F0CE73B005BEB60 /* FancyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB901F0CE73B005BEB60 /* FancyView.swift */; };
+		4969DB931F0CEADB005BEB60 /* RoundBtn.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB921F0CEADB005BEB60 /* RoundBtn.swift */; };
+		4969DB951F0CECA7005BEB60 /* FancyTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB941F0CECA7005BEB60 /* FancyTextField.swift */; };
 		5433655524658171EDCC2335 /* Pods_Social_app.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 446D94EA9A90E800B776C160 /* Pods_Social_app.framework */; };
 /* End PBXBuildFile section */
 
@@ -26,6 +30,10 @@
 		4969DB7E1F0CCF71005BEB60 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4969DB801F0CCF71005BEB60 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4969DB8B1F0CD67F005BEB60 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		4969DB8E1F0CE6E7005BEB60 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		4969DB901F0CE73B005BEB60 /* FancyView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyView.swift; sourceTree = "<group>"; };
+		4969DB921F0CEADB005BEB60 /* RoundBtn.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundBtn.swift; sourceTree = "<group>"; };
+		4969DB941F0CECA7005BEB60 /* FancyTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FancyTextField.swift; sourceTree = "<group>"; };
 		8441D5E545FE9F5EB061D798 /* Pods-Social app.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social app.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Social app/Pods-Social app.debug.xcconfig"; sourceTree = "<group>"; };
 		D22838408BE804732E32C111 /* Pods-Social app.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Social app.release.xcconfig"; path = "Pods/Target Support Files/Pods-Social app/Pods-Social app.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -63,6 +71,7 @@
 		4969DB731F0CCF6F005BEB60 /* Social app */ = {
 			isa = PBXGroup;
 			children = (
+				4969DB8D1F0CE6A5005BEB60 /* Util */,
 				4969DB891F0CD468005BEB60 /* Model */,
 				4969DB8A1F0CD471005BEB60 /* View */,
 				4969DB881F0CD455005BEB60 /* Controller */,
@@ -94,8 +103,19 @@
 		4969DB8A1F0CD471005BEB60 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				4969DB901F0CE73B005BEB60 /* FancyView.swift */,
+				4969DB921F0CEADB005BEB60 /* RoundBtn.swift */,
+				4969DB941F0CECA7005BEB60 /* FancyTextField.swift */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		4969DB8D1F0CE6A5005BEB60 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				4969DB8E1F0CE6E7005BEB60 /* Constants.swift */,
+			);
+			name = Util;
 			sourceTree = "<group>";
 		};
 		5080EEC57410AD925ABF941D /* Frameworks */ = {
@@ -241,7 +261,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				4969DB771F0CCF70005BEB60 /* SignInVC.swift in Sources */,
+				4969DB931F0CEADB005BEB60 /* RoundBtn.swift in Sources */,
 				4969DB751F0CCF6F005BEB60 /* AppDelegate.swift in Sources */,
+				4969DB951F0CECA7005BEB60 /* FancyTextField.swift in Sources */,
+				4969DB911F0CE73B005BEB60 /* FancyView.swift in Sources */,
+				4969DB8F1F0CE6E7005BEB60 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
