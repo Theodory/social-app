@@ -99,7 +99,7 @@
                                         <rect key="frame" x="0.0" y="36" width="228" height="21"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="0.87" colorSpace="custom" customColorSpace="sRGB"/>
                                         <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uFV-IY-4sU">
                                         <rect key="frame" x="0.0" y="72" width="228" height="33"/>
@@ -112,6 +112,9 @@
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hasShadow" value="YES"/>
                                             <userDefinedRuntimeAttribute type="boolean" keyPath="hasRoundConner" value="YES"/>
                                         </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="signInBtnPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mdL-p0-dzd"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -135,6 +138,10 @@
                             <constraint firstItem="HeN-cj-bNb" firstAttribute="top" secondItem="0uS-U4-1mU" secondAttribute="bottom" constant="20" id="ptl-gh-8c7"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailField" destination="aHg-Mm-ixC" id="FkO-lq-n3A"/>
+                        <outlet property="paswordField" destination="7mA-xF-NvG" id="CRY-XN-toa"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
