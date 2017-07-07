@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		492068B01F0F7394002BFD29 /* FeedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492068AF1F0F7394002BFD29 /* FeedVC.swift */; };
+		492068B21F0F90E3002BFD29 /* RoundImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492068B11F0F90E3002BFD29 /* RoundImage.swift */; };
 		4969DB751F0CCF6F005BEB60 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB741F0CCF6F005BEB60 /* AppDelegate.swift */; };
 		4969DB771F0CCF70005BEB60 /* SignInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4969DB761F0CCF70005BEB60 /* SignInVC.swift */; };
 		4969DB7A1F0CCF70005BEB60 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4969DB781F0CCF70005BEB60 /* Main.storyboard */; };
@@ -22,6 +24,8 @@
 
 /* Begin PBXFileReference section */
 		446D94EA9A90E800B776C160 /* Pods_Social_app.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Social_app.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		492068AF1F0F7394002BFD29 /* FeedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedVC.swift; sourceTree = "<group>"; };
+		492068B11F0F90E3002BFD29 /* RoundImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundImage.swift; sourceTree = "<group>"; };
 		4969DB711F0CCF6F005BEB60 /* Social app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Social app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4969DB741F0CCF6F005BEB60 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4969DB761F0CCF70005BEB60 /* SignInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInVC.swift; sourceTree = "<group>"; };
@@ -89,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				4969DB761F0CCF70005BEB60 /* SignInVC.swift */,
+				492068AF1F0F7394002BFD29 /* FeedVC.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -106,6 +111,7 @@
 				4969DB901F0CE73B005BEB60 /* FancyView.swift */,
 				4969DB921F0CEADB005BEB60 /* RoundBtn.swift */,
 				4969DB941F0CECA7005BEB60 /* FancyTextField.swift */,
+				492068B11F0F90E3002BFD29 /* RoundImage.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -261,10 +267,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				4969DB771F0CCF70005BEB60 /* SignInVC.swift in Sources */,
+				492068B01F0F7394002BFD29 /* FeedVC.swift in Sources */,
 				4969DB931F0CEADB005BEB60 /* RoundBtn.swift in Sources */,
 				4969DB751F0CCF6F005BEB60 /* AppDelegate.swift in Sources */,
 				4969DB951F0CECA7005BEB60 /* FancyTextField.swift in Sources */,
 				4969DB911F0CE73B005BEB60 /* FancyView.swift in Sources */,
+				492068B21F0F90E3002BFD29 /* RoundImage.swift in Sources */,
 				4969DB8F1F0CE6E7005BEB60 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

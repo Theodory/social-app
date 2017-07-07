@@ -10,6 +10,7 @@ import UIKit
 import Firebase
 import FacebookCore
 import FacebookLogin
+import SwiftKeychainWrapper
 
 class SignInVC: UIViewController, UITextFieldDelegate {
 
@@ -20,6 +21,12 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         emailField.delegate = self
         paswordField.delegate = self
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if let _ = KeychainWrapper.standard.string(forKey: KEY_UID){
+            performAutoLogin()
+        }
     }
 
     @IBAction func facebookBtnPressed(_ sender: Any) {
@@ -50,6 +57,9 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                     print("SIGNIN: Unable to Authenticate with firebase - \(error.debugDescription)")
                 } else {
                     print("SIGNIN: successfully authenticated with firebase")
+                    if let user = user {
+                        self.completeSingIn(user.uid)
+                    }
                 }
         }
     }
@@ -60,13 +70,18 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
                 if error == nil {
                     print("SIGNIN: User auhtenticated successfully")
+                    if let user = user {
+                       self.completeSingIn(user.uid)
+                    }
                 } else {
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                         if error != nil {
                              print("SIGNIN: Problem while authenticating user - \(error.debugDescription)")
                         } else {
                             print("SIGNIN: Email user authenticated successfully email - \(String(describing: user?.email))")
-
+                            if let user = user {
+                                self.completeSingIn(user.uid)
+                            }
                         }
                     })
                 }
@@ -74,6 +89,16 @@ class SignInVC: UIViewController, UITextFieldDelegate {
             
         }
         
+    }
+    
+    func completeSingIn(_ id: String){
+        let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
+        print("SIGNIN: User saved to keychain: \(keyChainResult)")
+        performAutoLogin()
+    }
+    
+    func performAutoLogin(){
+        performSegue(withIdentifier: "gotToFeed", sender: nil)
     }
 }
 
