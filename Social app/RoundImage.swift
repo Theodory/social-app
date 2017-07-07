@@ -10,10 +10,11 @@ import UIKit
 
 /// Descroption: Makes any image view that has this class round
 class RoundImage: UIImageView {
-
-    override func draw(_ rect: CGRect) {
-         super.draw(rect)
+    
+    override func layoutSubviews() {
+        super.layoutSubviews()
         layer.cornerRadius = self.frame.size.width / 2
+
     }
 
 }
