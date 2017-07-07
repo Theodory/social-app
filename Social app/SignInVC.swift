@@ -51,14 +51,14 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    func firebaseAuth(_ credential: AuthCredential) {
+    func firebaseAuth(_ credential: AuthCredential ) {
             Auth.auth().signIn(with: credential) { (user, error) in
                 if error != nil {
                     print("SIGNIN: Unable to Authenticate with firebase - \(error.debugDescription)")
                 } else {
                     print("SIGNIN: successfully authenticated with firebase")
                     if let user = user {
-                        self.completeSingIn(user.uid)
+                        self.completeSingIn(user.uid , user , credential.provider)
                     }
                 }
         }
@@ -71,7 +71,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                 if error == nil {
                     print("SIGNIN: User auhtenticated successfully")
                     if let user = user {
-                       self.completeSingIn(user.uid)
+                       self.completeSingIn(user.uid , user , user.providerID)
                     }
                 } else {
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
@@ -80,7 +80,7 @@ class SignInVC: UIViewController, UITextFieldDelegate {
                         } else {
                             print("SIGNIN: Email user authenticated successfully email - \(String(describing: user?.email))")
                             if let user = user {
-                                self.completeSingIn(user.uid)
+                                self.completeSingIn(user.uid , user , user.providerID )
                             }
                         }
                     })
@@ -91,7 +91,13 @@ class SignInVC: UIViewController, UITextFieldDelegate {
         
     }
     
-    func completeSingIn(_ id: String){
+    func completeSingIn(_ id: String , _ user: User, _ provider: String) {
+        var userData = Dictionary<String,String>()
+        userData["provider"] = provider
+        userData["email"] = user.email!
+        
+        DataService.ds.createFirebaseDBUser(id, userData: userData)
+        
         let keyChainResult = KeychainWrapper.standard.set(id, forKey: KEY_UID)
         print("SIGNIN: User saved to keychain: \(keyChainResult)")
         performAutoLogin()
